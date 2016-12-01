@@ -43,7 +43,10 @@
     <None Include="InputFiles\Day1">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <Compile Include="Day1.cs" />
+    <Compile Include="D1\Day1.cs" />
+    <Compile Include="D1\Direction.cs" />
+    <Compile Include="D1\Movement.cs" />
+    <Compile Include="D1\Position.cs" />
     <Compile Include="InputReader.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
