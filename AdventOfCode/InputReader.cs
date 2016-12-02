@@ -11,5 +11,12 @@ namespace AdventOfCode
 
             return File.ReadAllText(filePath);
         }
+
+        public static string[] ReadLines(string file)
+        {
+            var filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "InputFiles", file);
+
+            return File.ReadAllLines(filePath);
+        }
     }
 }
