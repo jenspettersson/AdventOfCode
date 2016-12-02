@@ -7,38 +7,72 @@ namespace AdventOfCode.Tests.D2
     [TestFixture]
     public class Day2Tests
     {
-        [Test]
-        public void SomeTest()
+        [Test, Explicit]
+        public void GetResult_Part1()
         {
-            var day2 = new Day2();
+            string[,] g = {
+                {"1", "2", "3"},
+                {"4", "5", "6"},
+                {"7", "8", "9"}
+            };
+
+            var day2 = new Grid(g);
 
             var instructions = InputReader.ReadLines("Day2");
 
-            string code = day2.GetCode(instructions);
+            string code = day2.GetCode(instructions, new Position(1,1));
+
+            code.Should().Be("36629");
+        }
+
+        [Test, Explicit]
+        public void GetResult_Part2()
+        {
+            string[,] g = {
+                {"",  "",  "1", "",  "" },
+                {"",  "2", "3", "4", "" },
+                {"5", "6", "7", "8", "9"},
+                {"",  "A", "B", "C", "" },
+                {"",  "" , "D", "",  "" }
+            };
+
+            var day2 = new Grid(g);
+
+            var instructions = InputReader.ReadLines("Day2");
+
+            string code = day2.GetCode(instructions, new Position(0, 2));
+
+            code.Should().Be("99C3D");
         }
 
         [Test]
-        public void Foo()
+        public void Should_follow_instructions_part_1()
         {
-            var day2 = new Day2();
-            var code = day2.GetCode(new[] {"ULL", "RRDDD", "LURDL", "UUUUD" });
+            string[,] g = {
+                {"1", "2", "3"},
+                {"4", "5", "6"},
+                {"7", "8", "9"}
+            };
+
+            var day2 = new Grid(g);
+            var code = day2.GetCode(new[] {"ULL", "RRDDD", "LURDL", "UUUUD" }, new Position(1, 1));
             code.Should().Be("1985");
         }
 
         [Test]
-        public void Bar()
+        public void Should_follow_instructions_part_2()
         {
-            var day2 = new Day2();
-            var code = day2.GetCode(new[] { "RRDDD" });
-            code.Should().Be("9");
-        }
-
-        [Test]
-        public void Baz()
-        {
-            var day2 = new Day2();
-            var code = day2.GetCode(new[] { "LURDL" });
-            code.Should().Be("8");
+            string[,] g = {
+                {"",  "",  "1", "",  "" },
+                {"",  "2", "3", "4", "" },
+                {"5", "6", "7", "8", "9"},
+                {"",  "A", "B", "C", "" },
+                {"",  "" , "D", "",  "" }
+            };
+            
+            var day2 = new Grid(g);
+            var code = day2.GetCode(new[] { "ULL", "RRDDD", "LURDL", "UUUUD" }, new Position(0, 2));
+            code.Should().Be("5DB3");
         }
     }
 }

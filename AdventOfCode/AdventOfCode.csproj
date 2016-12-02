@@ -50,7 +50,8 @@
     <None Include="InputFiles\Day2">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <Compile Include="D2\Day2.cs" />
+    <Compile Include="D2\Grid.cs" />
+    <Compile Include="D2\Position.cs" />
     <Compile Include="InputReader.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
